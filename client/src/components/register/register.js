@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import axios from 'axios';
 
+
+
 export default function Register() {
+  
   const [user, setUser] = useState({
     fname:'',
     lname:'',
@@ -12,12 +15,17 @@ export default function Register() {
     city:'',
     Province:'',
   });
+  
   const handleSubmit = async e => {
     e.preventDefault();
     try {
       const response= await axios.post('/register',{user},{
-        method:"POST"
-      } );
+        method:"POST",
+  
+      }
+     );
+     console.log(response.data);
+     
       
       
       setUser({

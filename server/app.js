@@ -6,11 +6,12 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin:'http://localhost:8000',
+  origin:'http://localhost:3000',
   methods: ['GET', 'POST']
 }));
 
 app.use(express.json());
+
 
 mongoose.connect('mongodb+srv://user:ketOuhLzoRMck2aa@user.kohciug.mongodb.net/?retryWrites=true&w=majority');
 mongoose.connection.on('connected', () => {
@@ -34,7 +35,7 @@ const User = mongoose.model('User', {
 app.post('/register', async (req, res) => {
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-
+    res.send("test");
     const user = new User({
       firstName: req.body.fname,
       lastName: req.body.lname,
