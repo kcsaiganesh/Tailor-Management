@@ -1,10 +1,10 @@
 import React from "react";
 
 export default function home() {
-    const bag1="https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    // const bag1="https://wallpaper.dog/large/5547551.jpg"
     return (
 
-        <div  style={{backgroundImage:`url(${bag1})`}}className="2xl:container backdrop-blur-xl bg-white/30 flex justify-center  items-center w-full 2xl:mx-auto lg:px-20 md:py-12 md:px-6 py-9 px-4">
+        <div  className="2xl:container backdrop-blur-xl bg-gradient-to-r from-purple-500 to-pink-500 bg-white/30 flex justify-center  items-center w-full 2xl:mx-auto lg:px-20 md:py-12 md:px-6 py-9 px-4">
             <div className="w-80 md:w-auto  grid lg:grid-cols-3 grid-cols-1 lg:gap-8 gap-6">
                 <div className="relative group  ">
                     <img className="lg:block hidden w-full grayscale web-filter"  src="https://images.pexels.com/photos/2723623/pexels-photo-2723623.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Women" />

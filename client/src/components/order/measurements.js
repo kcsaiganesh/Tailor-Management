@@ -1,35 +1,35 @@
 import React from 'react'; 
 
 const MeasurementForm = () => {
+ 
+  let Gender="";
   
   return (    
     <div>
       <div>
-      <div class="w-48 flex flex-col p-4 m-2 bg-purple-200 h-24  rounded-lg shadow-md">
+      <div class="w-48 flex flex-col p-4 m-2   bg-purple-200 h-24   rounded-lg shadow-md">
     <div class="text-2xl font-bold text-purple-800"></div>
     <div class=" m-2 space-x-5 ">
       <button
-        class="px-2 py-2 font-bold text-white bg-purple-500 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none focus:shadow-outline-blue"
-        onclick="selectedOption = option1"
+        class="px-2 py-2 font-bold text-white bg-purple-500 rounded-md shadow-lg hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple  focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-50 ease-in-out"
+        onclick={Gender}
       >
-        {/* {{ option1 }} */}male
+       male
       </button>
       <button
-        class="px-2 py-2 font-bold  text-white bg-purple-500 rounded-full shadow-lg hover:bg-purple-700 focus:outline-none focus:shadow-outline-red"
-        onclick="selectedOption = option2"
+        class="px-2 py-2 font-bold text-white bg-purple-500 rounded-md shadow-lg hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple  focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-50 ease-in-out"
+        onclick={Gender}
       >
-        {/* {{ option2 }} */}female
+       female
       </button>
     </div>
-    <div class="mt-4 text-xl font-bold text-purple-800" v-if="selectedOption">
-      {/* You selected: {{ selectedOption }} */}
+
     </div>
-  </div>
       </div>
 
-    <div className="mx-auto max-w-lg  -mt-20 mb-5 rounded-lg shadow-purple-500 shadow-lg overflow-hidden ">
+    <div className="mx-auto max-w-lg  -mt-24 mb-5 rounded-lg shadow-purple-500 shadow-lg  ">
       <h1 className='font-bold text-2xl text-purple-700 m-5 '> Measurements</h1>
-    <form className="grid grid-cols-2 gap-4 m-6">
+    <form className="grid grid-cols-2 gap-4 m-6 ">
       <div className="col-span-1 m-2">
         <label htmlFor="measurement1" className="block text-purple-700 text-sm font-bold mb-2">
           coller
@@ -245,7 +245,8 @@ const MeasurementForm = () => {
           name="measurement2"
           className="shadow appearance-none border rounded w-full focus:bg-purple-50 py-2 px-3 text-purple-700 leading-tight focus:outline-none focus:shadow-outline"
         />
-        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-purple-500/50 focus:shadow-outline transition ease-in-out delay-50  hover:-translate-y-0.5 hover:scale-110 duration-100 mt-12 ">Order</button>
+        <button class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-sm focus:outline-none focus:shadow-purple-500/50 focus:shadow-outline  delay-50  hover:-translate-y-0.5 hover:scale-110 focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-50 ease-in-out mt-12 "
+        onClick={null}>Order</button>
       </div>
     </form>
     </div>

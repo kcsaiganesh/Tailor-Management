@@ -8,7 +8,8 @@ import Register from './components/register/register';
 import {
   BrowserRouter as Router, 
   Route,
-  Routes
+  Routes,
+  Navigate,
 } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
           <Route path='/register' element={<Register/>} />
           <Route path='/market' element={<Market/>} />
           <Route path='/order' element={<Order/>} />
+          <Route
+        path="*"
+        element={<Navigate to="/" replace />}
+    />
       </Routes>
      </Router>
     </div>

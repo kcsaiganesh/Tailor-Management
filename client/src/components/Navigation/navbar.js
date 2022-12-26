@@ -11,8 +11,8 @@ const navbar = () => {
     width: "30%",
   }
   return (
-    <div class="h-full  bg-purple-100 flex flex-col">
-    <div class="bg-purple-300  h-16 w-full shadow flex justify-between items-stretch relative px-3 align-middle" >
+    <div class="h-full bg-purple-100 flex flex-col ">
+    <div class="bg-purple-300 overflow-auto h-16  w-full shadow flex justify-between items-stretch  px-3 align-middle" >
     <a href="home" class="text-purple-900 font-sans font-bold h-12" target="_blank" rel="noreferrer" >
       <img style={logstyle}
       src="https://api.logo.com/api/v2/images?format=webp&logo=logo_6b399deb-08d5-4642-9709-256b8a3864e8&width=1000&background=transparent&fit=contain&u=1671264221" alt="logo"/> </a>   
