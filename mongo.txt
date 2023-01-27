@@ -1,1 +1,0 @@
-mongodb+srv://sampledb:<password>@cluster0.464qitl.mongodb.net/?retryWrites=true&w=majority

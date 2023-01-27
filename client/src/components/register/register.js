@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
+import RegSvg from './../../assets/register.svg';
 export default function Register() {
   const [user, setUser] = useState({
     fname: "",
@@ -15,9 +15,6 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/register", user, {
-        method: "POST",
-      });
 
       setUser({
         fname: user.fname,
@@ -28,7 +25,15 @@ export default function Register() {
         street: user.street,
         city: user.city,
         Province: user.Province,
+        orders: [],
       });
+
+      const response = await axios.post('/register', user, {
+        method: "POST",
+      });
+      if (response.status === 200) {
+        window.location.href = "/login"
+      }
       console.log(response);
     } catch (error) {
       console.error(error);
@@ -41,12 +46,12 @@ export default function Register() {
       [name]: value,
     });
   };
-
   return (
     <>
       <div className="flex flex-col fix mt-6 mb-5 items-center justify-center ">
+
         <form
-          class="bg-white shadow-2xl shadow-purple-400/50 object-contain rounded px-8 -bottom-2"
+          class="bg-white shadow-2xl overflow-hidden shadow-purple-400/50 object-contain rounded-xl  px-8 -bottom-2"
           action="#"
           method="post"
         >
@@ -209,6 +214,7 @@ export default function Register() {
               </button>
             </div>
           </div>
+          <img className="w-3/12 h-full absolute right-0 top-44 mr-56 overflow-hidden" src={RegSvg} alt="registersvg" />
         </form>
       </div>
     </>
