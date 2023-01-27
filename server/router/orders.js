@@ -34,7 +34,7 @@ orderRouter.post('/orders', async (req, res) => {
             cost: req.body.price,
         });
         console.log(order);
-        User.orders.push();
+        User.order.push(req.body);
         await User.save(function (err) {
             if (!err) console.log('success');
         })

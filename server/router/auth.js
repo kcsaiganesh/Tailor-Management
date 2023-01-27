@@ -43,15 +43,16 @@ userRouter.post("/register", async (req, res) => {
 userRouter.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({ email: req.body.email })
+  const user = await User.findOne({ email: email })
   console.log(user)
   if (!user) {
-    return res.send("User Not Found");
+    return res.send("user ot found");
   }
   if (await bcrypt.compare(password, user.password)) {
     res.send(email);
+    console.log("user auth successfull");
   } else {
-    res.send("Password is incorrect")
+    res.send("password is incorrect");
   }
 });
 

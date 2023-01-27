@@ -20,15 +20,22 @@ const login = () => {
       password: user.password,
       email: user.email,
     });
-    axios.post('/login', user, {
-      method: "POST",
-    })
+    axios.post('/login', user)
       .then(response => {
-        console.log(response);
-        // Set the success message
-        setSuccess('Logged in successfully');
-        window.location.href = "/";
+        if (response.data === user.email) {
+          console.log(response.data);
 
+          // Set the success message
+          setSuccess('Logged in successfully');
+          window.location.href = "/";
+        }
+        else if (response.data === "user not found") {
+          alert("user not found! Please Register");
+
+        }
+        else {
+          alert("Password is incorrect");
+        }
       })
       .catch(error => {
         console.error(error);
