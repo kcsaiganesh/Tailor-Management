@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const TailorPriceEstimator = () => {
-
-
-
   const [measurements, setMeasurements] = useState({
     top: '',
     bottom: '',
@@ -36,7 +33,7 @@ const TailorPriceEstimator = () => {
 
 
   const postMeasurements = (measurements) => {
-    axios.post('/orders', measurements, price)
+    axios.post('/orders', measurements)
       .then(response => {
         console.log(response)
         setSuccess('Ordered successfully');
@@ -62,7 +59,7 @@ const TailorPriceEstimator = () => {
     // Calculate the price based on the measurements, cloth type, and dress type
     const totalPrice = calculatePrice(measurements.top, measurements.bottom, measurements.fabric, measurements.set, measurements.unisexsize, measurements.nopairs);
     setPrice(totalPrice);
-    setMeasurements.price("price");
+
 
 
     // postMeasurements(measurements);
@@ -236,7 +233,7 @@ const TailorPriceEstimator = () => {
           <div className=" mt-24 block p-6 rounded-lg shadow-2xl bg-white max-w-sm">
             <div className=" flex flex-col">
               <label className="mt-3  text-purple-700 text-xl font-semibold  text-m">Estimated-Amount</label>
-              <label className="text-purple-400 text-xl font-normal"> price is ₹ {price} </label>
+              <label className="text-purple-400 text-xl font-normal" name="price" vlaue={price}> price is ₹ {price} </label>
               <button
                 onClick={postMeasurements}
                 className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-1 px-4 rounded focus:outline-none focus:shadow-purple-500/50 focus:shadow-outline transition ease-in-out delay-50  hover:-translate-y-0.5 hover:scale-110 duration-100 mt-3">confirm order</button>
@@ -322,7 +319,7 @@ const TailorPriceEstimator = () => {
             </label>
             <input
               type="number"
-              placeholder="size in inches" shirt
+              placeholder="size in inches"
               id="armpit"
               name="armpit"
               value={measurements.measurements.armpit}
